@@ -1,6 +1,16 @@
-# vue-sticky-notes
+# Vue Sticky Notes
 
-> A Vue.js project
+建立時間： 6/4/18
+
+> Repo by: [Jianan](https://github.com/jaw09)
+
+## 實現工具
+
+1. Vue
+2. Vue-cli
+3. Webpack
+4. LocalStorage
+5. Bootstrap4
 
 ## Build Setup
 
@@ -13,9 +23,4 @@ npm run dev
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
