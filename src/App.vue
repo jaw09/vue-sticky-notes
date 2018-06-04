@@ -3,6 +3,13 @@
     <progress-bar :postCount="notes.length" :maxNotes="maxNotes"></progress-bar>
     <new-post-form @newPost="newPost"></new-post-form>
     <note-board :notes="notes"  @removePost="removePost"></note-board>
+    <div class="row">
+      <div class="col-12 text-center" v-if="notes.length > 0">
+        <div class="alert alert-info">
+          Click on a post to delete it!
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
