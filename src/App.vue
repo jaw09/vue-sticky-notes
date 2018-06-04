@@ -22,7 +22,7 @@ export default {
   name: "App",
   data() {
     return {
-      notes: ["Test to View"],
+      notes: [],
       maxNotes: 10
     };
   },
@@ -37,10 +37,29 @@ export default {
         return;
       }
       this.notes.push(post);
+      this.savePosts();
     },
     removePost(key) {
       this.notes.splice(key, 1);
       this.savePosts();
+    },
+    savePosts() {
+      let parsed = JSON.stringify(this.notes);
+      localStorage.setItem("notes", parsed);
+    }
+  },
+  mounted() {
+    if (localStorage.getItem("notes")) {
+      try {
+        this.notes = JSON.parse(localStorage.getItem("notes"));
+        if (this.notes.length === 0) {
+          this.notes.push("Try To Post a New Note!");
+          let parsed = JSON.stringify(this.notes);
+          localStorage.setItem("notes", parsed);
+        }
+      } catch (e) {
+        localStorage.removeItem("notes");
+      }
     }
   },
   components: {
