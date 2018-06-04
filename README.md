@@ -4,6 +4,10 @@
 
 > Repo by: [Jianan](https://github.com/jaw09)
 
+## 網站實例
+
+  [Sticky Notes](https://vue-stickynotes.herokuapp.com/)
+
 ## 實現工具
 
 1. Vue
@@ -12,15 +16,18 @@
 4. LocalStorage
 5. Bootstrap4
 
-## Build Setup
+## Quickstart
 
 ``` bash
-# install dependencies
+# 下載專案
+git clone https://github.com/jaw09/vue-sticky-notes.git
+
+# 安裝套件
 npm install
 
-# serve with hot reload at localhost:8080
+# 在本地段瀏覽專案
 npm run dev
 
-# build for production with minification
+# 將專案打包輸出
 npm run build
 ```
