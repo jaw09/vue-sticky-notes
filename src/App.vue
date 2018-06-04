@@ -1,16 +1,25 @@
 <template>
   <div class="container">
-    <div class="progress">
-  <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
+    <note-board :notes="notes"></note-board>
   </div>
 </template>
 
 <script>
+import NoteBoard from "./components/NotesBoard";
+
 export default {
-  name: "App"
+  name: "App",
+  data() {
+    return {
+      notes: ["Test to View"],
+      maxNotes: 10
+    };
+  },
+  components: {
+    NoteBoard
+  }
 };
 </script>
 
-<style>
+<style lang="scss">
 </style>
