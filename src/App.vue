@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <new-post-form @newPost="newPost"></new-post-form>
-    <note-board :notes="notes"></note-board>
+    <note-board :notes="notes"  @removePost="removePost"></note-board>
   </div>
 </template>
 
@@ -24,6 +24,10 @@ export default {
         return;
       }
       this.notes.push(post);
+    },
+    removePost(key) {
+      this.notes.splice(key, 1);
+      this.savePosts();
     }
   },
   components: {
