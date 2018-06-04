@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <progress-bar :postCount="notes.length" :maxNotes="maxNotes"></progress-bar>
     <new-post-form @newPost="newPost"></new-post-form>
     <note-board :notes="notes"  @removePost="removePost"></note-board>
   </div>
@@ -8,6 +9,7 @@
 <script>
 import NoteBoard from "./components/NotesBoard";
 import NewPostForm from "./components/NewPostForm";
+import ProgressBar from "./components/ProgressBar";
 
 export default {
   name: "App",
@@ -23,6 +25,10 @@ export default {
         alert("No content!");
         return;
       }
+      if (this.notes.length >= this.maxNotes) {
+        alert("Please delete a post first!");
+        return;
+      }
       this.notes.push(post);
     },
     removePost(key) {
@@ -32,7 +38,8 @@ export default {
   },
   components: {
     NoteBoard,
-    NewPostForm
+    NewPostForm,
+    ProgressBar
   }
 };
 </script>
